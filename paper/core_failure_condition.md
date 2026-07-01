@@ -59,3 +59,50 @@ failure this precisely is what prevents the account from surviving as an
 unfalsifiable metaphor: it can be correct, and it can still be rendered
 meaningless, and it says exactly when.
 
+
+## Condition 3: Collapse of distributed identity
+
+A further assumption is implicit and, in practice, the most fragile: that
+multiple agents are looking at the same Git. The theory treats G as a shared
+object. In reality the same repository is read as different objects at once:
+
+- Human A reads Git as a meaning structure.
+- Human B reads it as a work log.
+- An AI reads it as a probabilistic token sequence.
+- A CI/CD system reads it as a bare state transition.
+
+They are not looking at the same G, yet they proceed as if they were. This
+shared illusion is the collapse point. When distributed identity fails, there
+is no single G for cognition to be about, and the coordination the theory
+describes has no common referent even though every agent believes it does.
+
+## Final breakdown: the return to philosophy
+
+All three conditions converge on one terminal state. The theory returns from
+theory to philosophy at the moment Git is reduced from a structure that holds
+time to a mere store of changes. At that point:
+
+- V, E, P, H are only graph definitions.
+- Cognition disappears.
+- The theory still holds, and yet explains nothing.
+
+This is the quiet death: not contradiction, but evacuation of meaning while
+the formalism stands.
+
+## The collapse, in one line
+
+The theory compresses to a single condition: the moment history stops being
+read, Git as time dies.
+
+## Architecture of the account
+
+The paper is closed as a single structure:
+
+```
+Entrance   abstract -> introduction
+Body       formal_model -> failure_taxonomy -> experimental_direction
+Test axis  limits_and_falsifiability
+Collapse   discussion + core_failure_condition
+Exit       future_work
+Synthesis  synthesis_map
+```
