@@ -1,0 +1,5 @@
+Commit DAG
+
+A --- B --- C
+       \
+        D --- E
