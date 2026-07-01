@@ -1,0 +1,9 @@
+Cognitive branching
+
+Thought(t0)
+   |
+   +-- hypothesis A
+   |
+   +-- hypothesis B
+         |
+         +-- merge decision
