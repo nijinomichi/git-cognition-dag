@@ -1,0 +1,7 @@
+Merge conflict state
+
+      A
+     / \
+   B     C
+     \  /
+      CONFLICT
