@@ -1,0 +1,15 @@
+# Failure Taxonomy
+
+Failure in Git should not be treated only as user error. Within the system G = (V, E, P, H), failures arise when graph structure, operational semantics, and human interpretation cease to align well enough to support reliable coordination.
+
+## Structural failures
+
+Structural failures are graph-level breakdowns in the relation among V, E, and P. They occur when the repository remains formally valid enough to exist, but the navigability or alignment of state and reference becomes unstable for collaborative use. Examples include detached HEAD, orphaned work, accidental hard reset, or branch pointer drift after aggressive history rewriting. In these cases, the graph still contains recoverable nodes in V, but P no longer offers an intuitive or shared path through them. The structural evolution suggested by `commit_dag_01.txt` clarifies why these failures matter: collaboration depends not just on stored states, but on legible access to state history. For collaboration systems, structural failures imply that recoverability and visibility are distinct properties. A system may preserve history while still failing users if the active pointer configuration obscures where collective work is located.
+
+## Semantic failures
+
+Semantic failures are meaning-level breakdowns in which graph relations underdetermine the intended interpretation of combined work. They are most visible during merge and rebase operations in H, where structurally compatible histories may still encode incompatible assumptions. The diagram `merge_conflict_graph.txt` serves as the repository's conflict topology model because it highlights the point where ancestry does not by itself decide integration. A merge conflict is therefore not only a syntactic collision; it is evidence that formal lineage in E cannot fully capture semantic compatibility across branches. For collaboration systems, semantic failures imply that version graphs need complementary aids for explanation, intent capture, and local rationale. Without such aids, teams may produce technically merged states that remain conceptually incoherent.
+
+## Cognitive failures
+
+Cognitive failures are interpretation-level breakdowns in which users cannot reliably infer what happened, what is true now, or which path should be trusted. These failures emerge from the interaction of all four components of G, because users must interpret nodes, edges, pointers, and history operations together rather than separately. The file `cognitive_branching_model.txt` is especially relevant here because branching increases optionality while also increasing narrative burden. As branch count, depth, and rewrite frequency grow, comprehension can degrade even if the graph remains formally consistent. Rebase is a canonical case: it may improve linear readability for one audience while degrading provenance understanding for another. For collaboration systems, cognitive failures imply that correctness alone is insufficient. Interfaces and workflows must support interpretability, not just state transition legality, if distributed repositories are to function as robust memory infrastructures.
