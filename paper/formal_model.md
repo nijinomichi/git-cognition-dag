@@ -1,0 +1,11 @@
+# Formal Model
+
+The paper adopts a single formal system G = (V, E, P, H). In this system, V is the set of commits as durable state nodes, E is the set of parent relations defining ancestry, P is the set of movable pointers such as branches and HEAD, and H is the set of history operations including merge, rebase, and reset. This formulation separates persistent structure from interpretive access. Commits and parent edges define the underlying DAG, while pointers and history operations determine which paths become salient to users at a given moment. User-facing time is therefore not identical to raw graph order: it is a projected narrative produced by traversing V and E through the current configuration of P and the transformation rules in H.
+
+The diagram `commit_dag_01.txt` is interpreted as the repository's structural evolution model because it foregrounds how successive commits accumulate into a non-cyclic record of change. Under this reading, graph growth is not just archival accumulation; it is the extension of an external memory substrate in which each node preserves a recoverable past state.
+
+The diagram `merge_conflict_graph.txt` represents conflict topology by making visible the point at which distinct ancestral paths must be jointly interpreted. In the formal model, such moments arise when H contains a merge operation whose candidate parents are both reachable but not semantically self-resolving from V, E, and P alone.
+
+The diagram `cognitive_branching_model.txt` captures branching cognition by emphasizing that branch creation is not merely storage duplication. Formally, branching introduces an alternative pointer configuration over the same or newly extended graph, allowing incompatible or exploratory future states to be developed without immediately collapsing them into a single narrative.
+
+This model supports the paper's main hypothesis because it shows how memory, revision, and collaboration can all be expressed without leaving the system G. The same vocabulary that describes graph persistence also describes temporal reinterpretation and coordination pressure, which is why Git can be analyzed as a cognition-bearing infrastructure rather than only as a file management tool.
